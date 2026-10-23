@@ -21,7 +21,7 @@
           type="button"
           id="prod-prev-btn"
           aria-label="Geser ke kiri"
-          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
+          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-devr-green-text flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
@@ -31,7 +31,7 @@
           type="button"
           id="prod-next-btn"
           aria-label="Geser ke kanan"
-          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
+          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-devr-green-text flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
@@ -47,7 +47,7 @@
     >
       <!-- Card 1 -->
       <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
-        <div class="relative h-48 overflow-hidden bg-black">
+        <div class="relative h-48 overflow-hidden bg-devr-card">
           <img
             src="/assets/devr_hero_laptop.jpg"
             alt="Kelola Konten Mudah"
@@ -55,7 +55,7 @@
             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80';"
           />
           <div class="absolute bottom-2 left-2 flex gap-1">
-            <span class="bg-black/90 text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-green/40">
+            <span class="bg-devr-card/90 backdrop-blur-md text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-border shadow-sm">
               MANDIRI &amp; MUDAH
             </span>
           </div>
@@ -79,83 +79,107 @@
       </div>
 
       <!-- Card 2 -->
-      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
-        <div class="relative h-48 overflow-hidden bg-black">
+      <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
+        <div class="relative h-48 overflow-hidden bg-devr-card">
           <img
             src="/assets/devr_creator_studio.jpg"
             alt="Arsitektur Modern Skor 100"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80';"
           />
+          <div class="absolute bottom-2 left-2 flex gap-1">
+            <span class="bg-devr-card/90 backdrop-blur-md text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-border shadow-sm">
+              SCORE 100
+            </span>
+          </div>
         </div>
-        <div class="p-5 flex-1 flex flex-col justify-between">
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
           <div>
-            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
-              Arsitektur Web | Solusi
+            <div class="text-[11px] font-bold text-devr-green mb-1 tracking-wider uppercase">
+              Arsitektur Web
             </div>
-            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
+            <h3 class="text-lg font-extrabold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors leading-snug">
               Arsitektur Statis Berkecepatan Tinggi
             </h3>
             <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
               Kombinasi modern Astro.js dan Tailwind CSS menghasilkan skor Google Lighthouse 100/100 demi visibilitas organik maksimal di mesin pencari.
             </p>
           </div>
+          <div class="pt-2 border-t border-devr-border/50 text-[11px] font-semibold text-devr-text-muted">
+            ✓ SEO semantik &amp; Google Core Web Vitals hijau
+          </div>
         </div>
       </div>
 
       <!-- Card 3 -->
-      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
-        <div class="relative h-48 overflow-hidden bg-black">
+      <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
+        <div class="relative h-48 overflow-hidden bg-devr-card">
           <img
             src="/assets/devr_split_comparison.jpg"
             alt="Integrasi WhatsApp & Form Lead"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1577563908411-5077b6dc7624?auto=format&fit=crop&w=800&q=80';"
           />
+          <div class="absolute bottom-2 left-2 flex gap-1">
+            <span class="bg-devr-card/90 backdrop-blur-md text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-border shadow-sm">
+              AUTO LEAD
+            </span>
+          </div>
         </div>
-        <div class="p-5 flex-1 flex flex-col justify-between">
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
           <div>
-            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
-              Otomasi Prospek | Produk
+            <div class="text-[11px] font-bold text-devr-green mb-1 tracking-wider uppercase">
+              Otomasi Prospek
             </div>
-            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
+            <h3 class="text-lg font-extrabold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors leading-snug">
               Integrasi WhatsApp &amp; Form Lead
             </h3>
             <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
               Ubah setiap klik pengunjung menjadi percakapan langsung ke WhatsApp bisnis Anda, email, atau CRM tanpa biaya operasional server.
             </p>
           </div>
+          <div class="pt-2 border-t border-devr-border/50 text-[11px] font-semibold text-devr-text-muted">
+            ✓ Template pesan WhatsApp otomatis tersusun rapi
+          </div>
         </div>
       </div>
 
       <!-- Card 4 -->
-      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
-        <div class="relative h-48 overflow-hidden bg-black">
+      <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
+        <div class="relative h-48 overflow-hidden bg-devr-card">
           <img
             src="/assets/devr_showcase_cards.jpg"
             alt="Hosting Gratis Cloudflare Pages"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=80';"
           />
+          <div class="absolute bottom-2 left-2 flex gap-1">
+            <span class="bg-devr-card/90 backdrop-blur-md text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-border shadow-sm">
+              ZERO MAINTENANCE
+            </span>
+          </div>
         </div>
-        <div class="p-5 flex-1 flex flex-col justify-between">
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
           <div>
-            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
-              Infrastruktur | Cloud
+            <div class="text-[11px] font-bold text-devr-green mb-1 tracking-wider uppercase">
+              Infrastruktur Cloud
             </div>
-            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
+            <h3 class="text-lg font-extrabold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors leading-snug">
               Hosting Selamanya Gratis di Cloudflare
             </h3>
             <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
               Keamanan tingkat bank, proteksi serangan siber DDoS, dan CDN edge tercepat di dunia tanpa biaya server bulanan seumur hidup.
             </p>
           </div>
+          <div class="pt-2 border-t border-devr-border/50 text-[11px] font-semibold text-devr-text-muted">
+            ✓ 99.99% Uptime global dengan proteksi SSL otomatis
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Progress Indicator Bar -->
-    <div class="mt-4 w-full h-1 bg-[#222222] rounded-full overflow-hidden relative">
+    <div class="mt-4 w-full h-1 bg-devr-border rounded-full overflow-hidden relative">
       <div id="prod-progress-bar" class="h-full bg-devr-green w-1/4 rounded-full transition-all duration-300"></div>
     </div>
   </div>

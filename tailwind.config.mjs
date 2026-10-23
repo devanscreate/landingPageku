@@ -9,6 +9,7 @@ export default {
           green: 'var(--color-accent)',
           'green-hover': 'var(--color-accent-hover)',
           'green-glow': 'var(--color-accent-glow)',
+          'green-text': 'var(--color-accent-text, #000000)',
           bg: 'var(--color-bg)',
           card: 'var(--color-card)',
           'card-hover': 'var(--color-card-hover)',

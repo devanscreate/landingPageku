@@ -4,28 +4,28 @@ import ThemeToggle from './ThemeToggle.astro';
 ---
 
 <header class="w-full sticky top-0 z-50 bg-devr-navbar border-b border-devr-border transition-colors duration-200">
-  <!-- Top Global Bar (NVIDIA style) -->
-  <div class="border-b border-[#222222] bg-[#000000]">
+  <!-- Top Global Bar -->
+  <div class="border-b border-devr-border bg-devr-badge/70 backdrop-blur-sm transition-colors">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between">
       <!-- Left: DEVR Brand & Breadcrumb -->
       <div class="flex items-center space-x-2">
         <a href="/" class="flex items-center gap-1.5 group" aria-label="DEVR Homepage">
-          <!-- NVIDIA-style green swirl / emblem SVG -->
+          <!-- Emblem SVG -->
           <svg class="w-6 h-5 text-devr-green transition-transform group-hover:scale-105" viewBox="0 0 32 24" fill="currentColor">
             <path d="M0 4.5C0 2.015 2.015 0 4.5 0h8.25c6.213 0 11.25 5.037 11.25 11.25v1.5C24 18.963 18.963 24 12.75 24H4.5A4.5 4.5 0 010 19.5v-15zm4.5 3.75v7.5h8.25c2.071 0 3.75-1.679 3.75-3.75s-1.679-3.75-3.75-3.75H4.5z"/>
             <path d="M26.5 6a3.5 3.5 0 013.5 3.5v5a3.5 3.5 0 01-7 0v-5a3.5 3.5 0 013.5-3.5z" opacity="0.9"/>
           </svg>
-          <span class="text-white font-extrabold text-base tracking-wider">DEVR</span>
+          <span class="text-devr-text-primary font-extrabold text-base tracking-wider">DEVR</span>
         </a>
-        <span class="text-[#666666] text-xs font-semibold select-none">&gt;</span>
+        <span class="text-devr-text-muted text-xs font-semibold select-none">&gt;</span>
       </div>
 
       <!-- Right: Language Selector & Theme Toggle -->
       <div class="flex items-center space-x-4">
-        <!-- Language selector (matches NVIDIA globe icon) -->
+        <!-- Language selector -->
         <button
           type="button"
-          class="flex items-center gap-1 text-[#aaaaaa] hover:text-white text-xs font-medium transition-colors"
+          class="flex items-center gap-1 text-devr-text-muted hover:text-devr-text-primary text-xs font-medium transition-colors"
           title="Pilih Bahasa"
           aria-label="Pilih Bahasa Indonesia"
         >
@@ -68,8 +68,8 @@ import ThemeToggle from './ThemeToggle.astro';
             <a href="#penawaran" class="text-devr-text-secondary hover:text-devr-green transition-colors">
               Paket &amp; Penawaran
             </a>
-            <a href="#faq" class="text-devr-text-secondary hover:text-devr-green transition-colors">
-              Tanya Jawab
+            <a href="#fitur" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+              Fitur Lengkap
             </a>
           </nav>
         </div>
@@ -80,7 +80,7 @@ import ThemeToggle from './ThemeToggle.astro';
             href="https://wa.me/"
             target="_blank"
             rel="noopener noreferrer"
-            class="px-4 py-2 text-xs font-bold text-black bg-devr-green hover:bg-devr-green-hover rounded transition-all duration-200 transform hover:-translate-y-0.5 shadow-sm"
+            class="px-4 py-2 text-xs font-bold text-devr-green-text bg-devr-green hover:bg-devr-green-hover rounded transition-all duration-200 transform hover:-translate-y-0.5 shadow-sm"
           >
             Minta Desain Awal Gratis
           </a>
@@ -91,7 +91,7 @@ import ThemeToggle from './ThemeToggle.astro';
           <button
             id="mobile-menu-btn"
             type="button"
-            class="p-2 text-devr-text-secondary hover:text-white focus:outline-none"
+            class="p-2 text-devr-text-secondary hover:text-devr-text-primary focus:outline-none"
             aria-label="Toggle Menu"
           >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,13 +108,13 @@ import ThemeToggle from './ThemeToggle.astro';
       <a href="#cara-kerja" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Cara Kerja</a>
       <a href="#portofolio" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Portofolio</a>
       <a href="#penawaran" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Paket &amp; Penawaran</a>
-      <a href="#faq" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Tanya Jawab</a>
+      <a href="#fitur" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Fitur Lengkap</a>
       <div class="pt-2">
         <a
           href="https://wa.me/"
           target="_blank"
           rel="noopener noreferrer"
-          class="block w-full text-center py-2.5 text-xs font-bold text-black bg-devr-green hover:bg-devr-green-hover rounded shadow-sm"
+          class="block w-full text-center py-2.5 text-xs font-bold text-devr-green-text bg-devr-green hover:bg-devr-green-hover rounded shadow-sm"
         >
           Minta Desain Awal Gratis
         </a>

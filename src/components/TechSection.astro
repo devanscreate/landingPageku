@@ -21,7 +21,7 @@
           type="button"
           id="tech-prev-btn"
           aria-label="Geser ke kiri"
-          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
+          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-devr-green-text flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
@@ -31,7 +31,7 @@
           type="button"
           id="tech-next-btn"
           aria-label="Geser ke kanan"
-          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
+          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-devr-green-text flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
@@ -47,7 +47,7 @@
     >
       <!-- Card 1: Initial UI Preview -->
       <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
-        <div class="relative h-48 overflow-hidden bg-black">
+        <div class="relative h-48 overflow-hidden bg-devr-card">
           <img
             src="/assets/devr_creator_studio.jpg"
             alt="Preview UI Awal DEVR Studio"
@@ -55,7 +55,7 @@
             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80';"
           />
           <div class="absolute bottom-2 left-2 flex gap-1">
-            <span class="bg-black/90 text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-green/40">
+            <span class="bg-devr-card/90 backdrop-blur-md text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-border shadow-sm">
               BEBAS RISIKO
             </span>
           </div>
@@ -80,7 +80,7 @@
 
       <!-- Card 2: Revisions Guaranteed -->
       <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
-        <div class="relative h-48 overflow-hidden bg-black">
+        <div class="relative h-48 overflow-hidden bg-devr-card">
           <img
             src="/assets/devr_split_comparison.jpg"
             alt="Garansi Revisi Fleksibel"
@@ -88,10 +88,10 @@
             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';"
           />
           <div class="absolute bottom-2 left-2 flex gap-1">
-            <span class="bg-black/90 text-[10px] font-black text-gray-400 px-2 py-0.5 rounded border border-gray-700">
+            <span class="bg-devr-card/90 backdrop-blur-md text-[10px] font-black text-devr-text-muted px-2 py-0.5 rounded border border-devr-border shadow-sm">
               KLIEN RAGU
             </span>
-            <span class="bg-devr-green text-[10px] font-black text-black px-2 py-0.5 rounded">
+            <span class="bg-devr-green text-[10px] font-black text-devr-green-text px-2 py-0.5 rounded shadow-sm">
               DIJAMIN COCOK
             </span>
           </div>
@@ -116,7 +116,7 @@
 
       <!-- Card 3: Lightning Speed -->
       <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
-        <div class="relative h-48 overflow-hidden bg-black">
+        <div class="relative h-48 overflow-hidden bg-devr-card">
           <img
             src="/assets/devr_showcase_cards.jpg"
             alt="Loading Kilat Kurang Dari 1 Detik"
@@ -124,7 +124,7 @@
             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80';"
           />
           <div class="absolute bottom-2 left-2 flex gap-1">
-            <span class="bg-black/90 text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-green/40">
+            <span class="bg-devr-card/90 backdrop-blur-md text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-border shadow-sm">
               SPEED &lt; 1s
             </span>
           </div>
@@ -149,7 +149,7 @@
 
       <!-- Card 4: One-time payment, free hosting -->
       <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
-        <div class="relative h-48 overflow-hidden bg-black">
+        <div class="relative h-48 overflow-hidden bg-devr-card">
           <img
             src="/assets/devr_hero_laptop.jpg"
             alt="Hosting Gratis Selamanya"
@@ -157,7 +157,7 @@
             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80';"
           />
           <div class="absolute bottom-2 left-2 flex gap-1">
-            <span class="bg-black/90 text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-green/40">
+            <span class="bg-devr-card/90 backdrop-blur-md text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-border shadow-sm">
               HEMAT JUTAAN
             </span>
           </div>
@@ -181,8 +181,8 @@
       </div>
     </div>
 
-    <!-- NVIDIA-style Progress Indicator Bar (Screenshot 1) -->
-    <div class="mt-4 w-full h-1 bg-[#222222] rounded-full overflow-hidden relative">
+    <!-- Progress Indicator Bar -->
+    <div class="mt-4 w-full h-1 bg-devr-border rounded-full overflow-hidden relative">
       <div id="tech-progress-bar" class="h-full bg-devr-green w-1/4 rounded-full transition-all duration-300"></div>
     </div>
   </div>

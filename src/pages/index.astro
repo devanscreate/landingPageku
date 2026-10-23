@@ -28,40 +28,44 @@ import ProductivitySection from '../components/ProductivitySection.astro';
   <ProductivitySection />
 
   <!-- Action Banner / Conversion CTA -->
-  <section class="py-16 bg-gradient-to-r from-devr-bg via-devr-card to-devr-bg border-t border-b border-devr-border relative overflow-hidden transition-colors">
-    <div class="absolute inset-0 pointer-events-none opacity-20">
-      <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-64 bg-devr-green/30 blur-[140px] rounded-full"></div>
-    </div>
+  <section class="py-16 bg-devr-bg border-t border-b border-devr-border relative overflow-hidden transition-colors">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="rounded-2xl bg-devr-card border border-devr-border p-8 sm:p-12 text-center shadow-xl relative overflow-hidden">
+        <div class="absolute inset-0 pointer-events-none opacity-15">
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-48 bg-devr-green blur-[120px] rounded-full"></div>
+        </div>
 
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-      <span class="inline-block px-3 py-1 rounded-full bg-devr-badge border border-devr-green/40 text-devr-green font-mono text-xs font-bold uppercase tracking-wider">
-        PENAWARAN AWAL PROYEK
-      </span>
+        <div class="relative z-10 space-y-6">
+          <span class="inline-block px-3 py-1 rounded-full bg-devr-badge border border-devr-border text-devr-green font-mono text-xs font-bold uppercase tracking-wider">
+            PENAWARAN AWAL PROYEK
+          </span>
 
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-devr-text-primary tracking-tight">
-        SIAP MELIPATGANDAKAN PENJUALAN BISNIS ANDA? <br class="hidden sm:inline" />
-        <span class="text-devr-green">MINTA PREVIEW DESAIN AWAL SEKARANG</span>
-      </h2>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-devr-text-primary tracking-tight">
+            SIAP MELIPATGANDAKAN PENJUALAN BISNIS ANDA? <br class="hidden sm:inline" />
+            <span class="text-devr-green">MINTA PREVIEW DESAIN AWAL SEKARANG</span>
+          </h2>
 
-      <p class="text-sm sm:text-base text-devr-text-secondary max-w-2xl mx-auto leading-relaxed">
-        Tanpa beli kucing dalam karung. Kami buatkan konsep visual UI awal khusus bisnis Anda. Suka dengan desainnya? Baru kita lanjutkan ke pengerjaan resmi.
-      </p>
+          <p class="text-sm sm:text-base text-devr-text-secondary max-w-2xl mx-auto leading-relaxed">
+            Tanpa beli kucing dalam karung. Kami buatkan konsep visual UI awal khusus bisnis Anda. Suka dengan desainnya? Baru kita lanjutkan ke pengerjaan resmi.
+          </p>
 
-      <div class="pt-4 flex flex-wrap justify-center gap-4">
-        <a
-          href="https://wa.me/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="px-8 py-3.5 text-sm font-bold text-black bg-devr-green hover:bg-devr-green-hover rounded-lg transition-all duration-200 transform hover:scale-105 shadow-xl shadow-devr-green/20"
-        >
-          Konsultasi &amp; Request Desain Gratis via WhatsApp &rarr;
-        </a>
-        <a
-          href="#portofolio"
-          class="px-8 py-3.5 text-sm font-semibold text-devr-text-primary border border-devr-border hover:border-devr-green hover:bg-devr-card rounded-lg transition-all duration-200"
-        >
-          Lihat Portofolio Bisnis
-        </a>
+          <div class="pt-4 flex flex-wrap justify-center gap-4">
+            <a
+              href="https://wa.me/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="px-8 py-3.5 text-sm font-bold text-devr-green-text bg-devr-green hover:bg-devr-green-hover rounded-lg transition-all duration-200 transform hover:scale-105 shadow-xl shadow-devr-green/20"
+            >
+              Konsultasi &amp; Request Desain Gratis via WhatsApp &rarr;
+            </a>
+            <a
+              href="#portofolio"
+              class="px-8 py-3.5 text-sm font-semibold text-devr-text-primary border border-devr-border hover:border-devr-green hover:bg-devr-card-hover rounded-lg transition-all duration-200"
+            >
+              Lihat Portofolio Bisnis
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
