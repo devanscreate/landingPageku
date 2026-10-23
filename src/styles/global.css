@@ -1,0 +1,99 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+:root,
+[data-theme="dark"] {
+  --color-bg: #000000;
+  --color-card: #131313;
+  --color-card-hover: #1c1c1c;
+  --color-border: #262626;
+  --color-accent: #76B900;
+  --color-accent-hover: #88d400;
+  --color-accent-glow: rgba(118, 185, 0, 0.35);
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #CCCCCC;
+  --color-text-muted: #888888;
+  --color-navbar: #000000;
+  --color-badge: #1a1a1a;
+  color-scheme: dark;
+}
+
+[data-theme="light"] {
+  --color-bg: #F7F7F8;
+  --color-card: #FFFFFF;
+  --color-card-hover: #F0F2F5;
+  --color-border: #E5E7EB;
+  --color-accent: #68A500;
+  --color-accent-hover: #588C00;
+  --color-accent-glow: rgba(104, 165, 0, 0.25);
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #334155;
+  --color-text-muted: #64748B;
+  --color-navbar: #FFFFFF;
+  --color-badge: #E2E8F0;
+  color-scheme: light;
+}
+
+[data-theme="stealth"] {
+  --color-bg: #0A0D0B;
+  --color-card: #111713;
+  --color-card-hover: #18221B;
+  --color-border: #1E2D22;
+  --color-accent: #00E676;
+  --color-accent-hover: #00C853;
+  --color-accent-glow: rgba(0, 230, 118, 0.35);
+  --color-text-primary: #E8F5E9;
+  --color-text-secondary: #A5D6A7;
+  --color-text-muted: #66BB6A;
+  --color-navbar: #0A0D0B;
+  --color-badge: #1B2E20;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--color-bg);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* Hide scrollbar for carousel while preserving functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,176 @@
+---
+// src/components/PortfolioSection.astro
+---
+
+<section id="portofolio" class="py-12 bg-devr-bg border-b border-devr-border transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header: Title & Navigation Controls (Matches Screenshot 2) -->
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-devr-text-primary tracking-tight">
+        Karya &amp; Solusi Web
+      </h2>
+
+      <!-- Navigation Arrows -->
+      <div class="flex items-center space-x-2">
+        <button
+          type="button"
+          id="port-prev-btn"
+          aria-label="Geser portofolio ke kiri"
+          class="w-8 h-8 rounded bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button
+          type="button"
+          id="port-next-btn"
+          aria-label="Geser portofolio ke kanan"
+          class="w-8 h-8 rounded bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Scrollable Cards Container -->
+    <div
+      id="port-carousel"
+      class="flex gap-5 overflow-x-auto no-scrollbar scroll-smooth pb-4 snap-x snap-mandatory"
+    >
+      <!-- Card 1 -->
+      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+        <div class="relative h-48 overflow-hidden bg-black">
+          <img
+            src="/assets/devr_showcase_cards.jpg"
+            alt="Peluncuran Eksklusif Brand Mewah"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80';"
+          />
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
+              Berita | Solusi Web
+            </div>
+            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
+              Desain Kustom Generasi Baru
+            </h3>
+            <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
+              Peningkatan konversi 140% dengan arsitektur headless modern, visual tajam, dan animasi interaktif halus tanpa beban plugin pihak ketiga.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+        <div class="relative h-48 overflow-hidden bg-black">
+          <img
+            src="/assets/devr_creator_studio.jpg"
+            alt="DEVR at Tech Summit"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80';"
+          />
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
+              Showcase | Korporat
+            </div>
+            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
+              DEVR at Tech Summit 2026
+            </h3>
+            <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
+              Peluncuran landing page interaktif berskala internasional dengan 100k+ pengunjung harian dengan stabilitas server absolut.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+        <div class="relative h-48 overflow-hidden bg-black">
+          <img
+            src="/assets/devr_split_comparison.jpg"
+            alt="DEVR Component Engine 4.5"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80';"
+          />
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
+              Katalog | Komponen
+            </div>
+            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
+              DEVR Component Engine 4.5
+            </h3>
+            <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
+              Pembaruan Ray UX Reconstruction kini tersedia, siap mengakselerasi proses pembuatan antarmuka bisnis Anda dalam hitungan hari.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+        <div class="relative h-48 overflow-hidden bg-black">
+          <img
+            src="/assets/devr_hero_laptop.jpg"
+            alt="B2B Enterprise Portal"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80';"
+          />
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
+              Solusi | B2B Portal
+            </div>
+            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
+              DEVR Enterprise Max-Q
+            </h3>
+            <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
+              Desain terstruktur yang menyajikan data dan proposisi nilai secara tegas untuk meyakinkan para pengambil keputusan perusahaan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Progress Indicator Bar -->
+    <div class="mt-4 w-full h-1 bg-[#222222] rounded-full overflow-hidden relative">
+      <div id="port-progress-bar" class="h-full bg-devr-green w-1/4 rounded-full transition-all duration-300"></div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  const portContainer = document.getElementById('port-carousel');
+  const portPrev = document.getElementById('port-prev-btn');
+  const portNext = document.getElementById('port-next-btn');
+  const portProgress = document.getElementById('port-progress-bar');
+
+  if (portContainer && portPrev && portNext && portProgress) {
+    const cardWidth = 360;
+
+    portNext.addEventListener('click', () => {
+      portContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+
+    portPrev.addEventListener('click', () => {
+      portContainer.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+
+    portContainer.addEventListener('scroll', () => {
+      const maxScroll = portContainer.scrollWidth - portContainer.clientWidth;
+      if (maxScroll > 0) {
+        const percentage = Math.min(100, Math.max(25, (portContainer.scrollLeft / maxScroll) * 100));
+        portProgress.style.width = percentage + '%';
+      }
+    });
+  }
+</script>

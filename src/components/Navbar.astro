@@ -1,0 +1,158 @@
+---
+// src/components/Navbar.astro
+import ThemeToggle from './ThemeToggle.astro';
+---
+
+<header class="w-full sticky top-0 z-50 bg-devr-navbar border-b border-devr-border transition-colors duration-200">
+  <!-- Top Global Bar (NVIDIA style) -->
+  <div class="border-b border-[#222222] bg-[#000000]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between">
+      <!-- Left: DEVR Brand & Breadcrumb -->
+      <div class="flex items-center space-x-2">
+        <a href="/" class="flex items-center gap-1.5 group" aria-label="DEVR Homepage">
+          <!-- NVIDIA-style green swirl / emblem SVG -->
+          <svg class="w-6 h-5 text-devr-green transition-transform group-hover:scale-105" viewBox="0 0 32 24" fill="currentColor">
+            <path d="M0 4.5C0 2.015 2.015 0 4.5 0h8.25c6.213 0 11.25 5.037 11.25 11.25v1.5C24 18.963 18.963 24 12.75 24H4.5A4.5 4.5 0 010 19.5v-15zm4.5 3.75v7.5h8.25c2.071 0 3.75-1.679 3.75-3.75s-1.679-3.75-3.75-3.75H4.5z"/>
+            <path d="M26.5 6a3.5 3.5 0 013.5 3.5v5a3.5 3.5 0 01-7 0v-5a3.5 3.5 0 013.5-3.5z" opacity="0.9"/>
+          </svg>
+          <span class="text-white font-extrabold text-base tracking-wider">DEVR</span>
+        </a>
+        <span class="text-[#666666] text-xs font-semibold select-none">&gt;</span>
+      </div>
+
+      <!-- Right: Language Selector & Theme Toggle -->
+      <div class="flex items-center space-x-4">
+        <!-- Language selector (matches NVIDIA globe icon) -->
+        <button
+          type="button"
+          class="flex items-center gap-1 text-[#aaaaaa] hover:text-white text-xs font-medium transition-colors"
+          title="Pilih Bahasa"
+          aria-label="Pilih Bahasa Indonesia"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" stroke-width="1.8" />
+            <path stroke-width="1.8" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+          </svg>
+          <span class="font-bold text-[11px] tracking-wider">ID</span>
+        </button>
+
+        <!-- Dynamic Theme Toggle -->
+        <ThemeToggle />
+      </div>
+    </div>
+  </div>
+
+  <!-- Sub-Navbar: Main Navigation (matches GeForce bar in screenshot) -->
+  <div class="bg-devr-navbar transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-14">
+        <!-- Left: Studio / GeForce Style Branding & Navigation Links -->
+        <div class="flex items-center space-x-8">
+          <a href="/" class="flex items-center">
+            <span class="text-devr-text-primary font-bold text-xl tracking-tight hover:text-devr-green transition-colors">
+              Studio
+            </span>
+          </a>
+
+          <!-- Desktop Navigation -->
+          <nav class="hidden md:flex items-center space-x-6 text-[13px] font-medium" aria-label="Navigasi Utama">
+            <div class="relative group cursor-pointer">
+              <span class="flex items-center gap-1 text-devr-text-secondary group-hover:text-white transition-colors py-2">
+                Produk
+                <svg class="w-3 h-3 text-[#777] group-hover:text-devr-green transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+              <!-- Dropdown -->
+              <div class="absolute left-0 top-full hidden group-hover:block w-48 py-2 bg-devr-card border border-devr-border rounded shadow-xl z-50">
+                <a href="#teknologi" class="block px-4 py-2 text-xs text-devr-text-secondary hover:text-white hover:bg-devr-card-hover">Landing Page Kustom</a>
+                <a href="#portofolio" class="block px-4 py-2 text-xs text-devr-text-secondary hover:text-white hover:bg-devr-card-hover">Redesain Website</a>
+                <a href="#produktivitas" class="block px-4 py-2 text-xs text-devr-text-secondary hover:text-white hover:bg-devr-card-hover">Headless CMS Setup</a>
+              </div>
+            </div>
+
+            <div class="relative group cursor-pointer">
+              <span class="flex items-center gap-1 text-devr-text-secondary group-hover:text-white transition-colors py-2">
+                Permainan &amp; Teknologi
+                <svg class="w-3 h-3 text-[#777] group-hover:text-devr-green transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+              <div class="absolute left-0 top-full hidden group-hover:block w-52 py-2 bg-devr-card border border-devr-border rounded shadow-xl z-50">
+                <a href="#teknologi" class="block px-4 py-2 text-xs text-devr-text-secondary hover:text-white hover:bg-devr-card-hover">Astro.js Zero-JS Core</a>
+                <a href="#teknologi" class="block px-4 py-2 text-xs text-devr-text-secondary hover:text-white hover:bg-devr-card-hover">Tailwind CSS Variable Engine</a>
+                <a href="#produktivitas" class="block px-4 py-2 text-xs text-devr-text-secondary hover:text-white hover:bg-devr-card-hover">Cloudflare Pages Edge CDN</a>
+              </div>
+            </div>
+
+            <a href="#teknologi" class="text-devr-text-secondary hover:text-white transition-colors">DEVR App</a>
+            <a href="#portofolio" class="text-devr-text-secondary hover:text-white transition-colors">Drivers</a>
+            <a href="#produktivitas" class="text-devr-text-secondary hover:text-white transition-colors">Berita</a>
+
+            <div class="relative group cursor-pointer">
+              <span class="flex items-center gap-1 text-devr-text-secondary group-hover:text-white transition-colors py-2">
+                Dukungan
+                <svg class="w-3 h-3 text-[#777] group-hover:text-devr-green transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                </svg>
+              </span>
+              <div class="absolute left-0 top-full hidden group-hover:block w-44 py-2 bg-devr-card border border-devr-border rounded shadow-xl z-50">
+                <a href="#kontak" class="block px-4 py-2 text-xs text-devr-text-secondary hover:text-white hover:bg-devr-card-hover">Konsultasi Gratis</a>
+                <a href="#kontak" class="block px-4 py-2 text-xs text-devr-text-secondary hover:text-white hover:bg-devr-card-hover">Dokumentasi Teknis</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+        <!-- Right: CTA Button -->
+        <div class="hidden md:flex items-center">
+          <a
+            href="#kontak"
+            class="px-4 py-1.5 text-xs font-bold text-black bg-devr-green hover:bg-devr-green-hover rounded transition-all duration-200 transform hover:-translate-y-0.5"
+          >
+            Pesan Landing Page
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="flex md:hidden items-center">
+          <button
+            id="mobile-menu-btn"
+            type="button"
+            class="p-2 text-devr-text-secondary hover:text-white focus:outline-none"
+            aria-label="Toggle Menu"
+          >
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden border-t border-devr-border bg-devr-card px-4 pt-2 pb-4 space-y-2">
+      <a href="#teknologi" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Produk &amp; Layanan</a>
+      <a href="#teknologi" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Permainan &amp; Teknologi</a>
+      <a href="#teknologi" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">DEVR App</a>
+      <a href="#portofolio" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Portofolio</a>
+      <a href="#produktivitas" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Berita &amp; Artikel</a>
+      <a href="#kontak" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Dukungan</a>
+      <div class="pt-2">
+        <a href="#kontak" class="block w-full text-center py-2 text-xs font-bold text-black bg-devr-green rounded">
+          Pesan Landing Page
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  const mobileBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (mobileBtn && mobileMenu) {
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>

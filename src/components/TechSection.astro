@@ -1,0 +1,186 @@
+---
+// src/components/TechSection.astro
+---
+
+<section id="teknologi" class="py-12 bg-devr-bg border-b border-devr-border transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Header: Title & Navigation Controls -->
+    <div class="flex items-center justify-between mb-6">
+      <h2 class="text-2xl sm:text-3xl font-extrabold text-devr-text-primary tracking-tight">
+        Teknologi DEVR
+      </h2>
+
+      <!-- Navigation Arrows (NVIDIA style green buttons) -->
+      <div class="flex items-center space-x-2">
+        <button
+          type="button"
+          id="tech-prev-btn"
+          aria-label="Geser ke kiri"
+          class="w-8 h-8 rounded bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button
+          type="button"
+          id="tech-next-btn"
+          aria-label="Geser ke kanan"
+          class="w-8 h-8 rounded bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Scrollable Cards Container (Carousel) -->
+    <div
+      id="tech-carousel"
+      class="flex gap-5 overflow-x-auto no-scrollbar scroll-smooth pb-4 snap-x snap-mandatory"
+    >
+      <!-- Card 1 -->
+      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+        <div class="relative h-48 overflow-hidden bg-black">
+          <img
+            src="/assets/devr_creator_studio.jpg"
+            alt="Astro Zero-JS Core"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80';"
+          />
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
+              Kecepatan | Fitur
+            </div>
+            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
+              Astro Zero-JS Core
+            </h3>
+            <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
+              Akses instan di bawah 500ms. Menghasilkan HTML murni tanpa beban skrip JavaScript yang memperlambat browser dan membuang kuota pengunjung.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 (With RTX OFF / RTX ON style badge) -->
+      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+        <div class="relative h-48 overflow-hidden bg-black">
+          <img
+            src="/assets/devr_split_comparison.jpg"
+            alt="High-Conversion UX"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';"
+          />
+          <!-- RTX Comparison Badges -->
+          <div class="absolute bottom-2 left-2 flex gap-1">
+            <span class="bg-black/90 text-[10px] font-black text-gray-400 px-2 py-0.5 rounded border border-gray-700">
+              STD OFF
+            </span>
+            <span class="bg-devr-green text-[10px] font-black text-black px-2 py-0.5 rounded">
+              DEVR ON
+            </span>
+          </div>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
+              Konversi &amp; Desain | Produk
+            </div>
+            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
+              High-Conversion UX
+            </h3>
+            <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
+              Tata letak psikologi penjualan modern yang dioptimalkan untuk memaksimalkan retensi pengunjung dan melipatgandakan prospek bisnis Anda.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+        <div class="relative h-48 overflow-hidden bg-black">
+          <img
+            src="/assets/devr_showcase_cards.jpg"
+            alt="Project DEVR-Assist AI"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80';"
+          />
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
+              Kecerdasan Buatan | Produk
+            </div>
+            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
+              Project DEVR-Assist AI
+            </h3>
+            <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
+              Project DEVR-Assist adalah asisten struktur AI yang membantu merancang SEO semantik, metadata dinamis, dan kecepatan indexing Google secara otomatis.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+        <div class="relative h-48 overflow-hidden bg-black">
+          <img
+            src="/assets/devr_hero_laptop.jpg"
+            alt="Cloudflare Edge Turbo"
+            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80';"
+          />
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
+              Infrastruktur Cloud | Performa
+            </div>
+            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
+              Cloudflare Edge Turbo
+            </h3>
+            <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
+              Distribusi global di ratusan edge node dunia untuk waktu muat di bawah 500ms dengan proteksi DDoS bawaan dan bandwidth tanpa batas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NVIDIA-style Progress Indicator Bar (Screenshot 1) -->
+    <div class="mt-4 w-full h-1 bg-[#222222] rounded-full overflow-hidden relative">
+      <div id="tech-progress-bar" class="h-full bg-devr-green w-1/4 rounded-full transition-all duration-300"></div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  // Tech Carousel Navigation & Dynamic Progress Bar
+  const techContainer = document.getElementById('tech-carousel');
+  const techPrev = document.getElementById('tech-prev-btn');
+  const techNext = document.getElementById('tech-next-btn');
+  const techProgress = document.getElementById('tech-progress-bar');
+
+  if (techContainer && techPrev && techNext && techProgress) {
+    const cardWidth = 360;
+
+    techNext.addEventListener('click', () => {
+      techContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+    });
+
+    techPrev.addEventListener('click', () => {
+      techContainer.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+    });
+
+    techContainer.addEventListener('scroll', () => {
+      const maxScroll = techContainer.scrollWidth - techContainer.clientWidth;
+      if (maxScroll > 0) {
+        const percentage = Math.min(100, Math.max(25, (techContainer.scrollLeft / maxScroll) * 100));
+        techProgress.style.width = percentage + '%';
+      }
+    });
+  }
+</script>

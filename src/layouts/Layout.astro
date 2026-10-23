@@ -1,0 +1,58 @@
+---
+// src/layouts/Layout.astro
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "DEVR - Solusi Pembuatan Web Landing Page Kustom Berkecepatan Tinggi",
+  description = "DEVR menghadirkan landing page kustom eksklusif tanpa template pasaran. Dibangun dengan Astro.js & Tailwind CSS untuk kecepatan kilat Zero-JS dan rasio konversi maksimal."
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="id" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 24' fill='%2376B900'><path d='M0 4.5C0 2.015 2.015 0 4.5 0h8.25c6.213 0 11.25 5.037 11.25 11.25v1.5C24 18.963 18.963 24 12.75 24H4.5A4.5 4.5 0 010 19.5v-15zm4.5 3.75v7.5h8.25c2.071 0 3.75-1.679 3.75-3.75s-1.679-3.75-3.75-3.75H4.5z'/></svg>" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Meta Tags -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="DEVR Studio" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="id_ID" />
+
+    <!-- Fonts: Inter from Google Fonts for authentic modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Anti-FOUC Theme Script (Inline before DOM render) -->
+    <script is:inline>
+      (function() {
+        try {
+          const theme = localStorage.getItem('devr-theme') || 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="min-h-screen flex flex-col bg-devr-bg text-devr-text-primary antialiased selection:bg-devr-green selection:text-black">
+    <Navbar />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
