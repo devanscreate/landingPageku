@@ -2,21 +2,26 @@
 // src/components/PortfolioSection.astro
 ---
 
-<section id="portofolio" class="py-12 bg-devr-bg border-b border-devr-border transition-colors">
+<section id="portofolio" class="py-14 bg-devr-bg border-b border-devr-border transition-colors">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Header: Title & Navigation Controls (Matches Screenshot 2) -->
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-devr-text-primary tracking-tight">
-        Karya &amp; Solusi Web
-      </h2>
+    <!-- Header: Title & Navigation Controls -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+      <div>
+        <span class="text-xs uppercase font-extrabold tracking-widest text-devr-green block mb-1">
+          STUDI KASUS &amp; HASIL NYATA
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-devr-text-primary tracking-tight">
+          PORTOFOLIO SOLUSI BISNIS DEVR STUDIO
+        </h2>
+      </div>
 
       <!-- Navigation Arrows -->
-      <div class="flex items-center space-x-2">
+      <div class="flex items-center space-x-2 self-end sm:self-auto">
         <button
           type="button"
           id="port-prev-btn"
           aria-label="Geser portofolio ke kiri"
-          class="w-8 h-8 rounded bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95"
+          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
@@ -26,7 +31,7 @@
           type="button"
           id="port-next-btn"
           aria-label="Geser portofolio ke kanan"
-          class="w-8 h-8 rounded bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95"
+          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
@@ -40,102 +45,134 @@
       id="port-carousel"
       class="flex gap-5 overflow-x-auto no-scrollbar scroll-smooth pb-4 snap-x snap-mandatory"
     >
-      <!-- Card 1 -->
-      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+      <!-- Card 1: UMKM & Kuliner -->
+      <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
         <div class="relative h-48 overflow-hidden bg-black">
           <img
             src="/assets/devr_showcase_cards.jpg"
-            alt="Peluncuran Eksklusif Brand Mewah"
+            alt="Landing Page UMKM & Industri Kuliner"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80';"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80';"
           />
+          <div class="absolute bottom-2 left-2 flex gap-1">
+            <span class="bg-black/90 text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-green/40">
+              DIRECT WHATSAPP
+            </span>
+          </div>
         </div>
-        <div class="p-5 flex-1 flex flex-col justify-between">
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
           <div>
-            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
-              Berita | Solusi Web
+            <div class="text-[11px] font-bold text-devr-green mb-1 tracking-wider uppercase">
+              UMKM &amp; Kuliner
             </div>
-            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
-              Desain Kustom Generasi Baru
+            <h3 class="text-lg font-extrabold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors leading-snug">
+              Landing Page UMKM &amp; Industri Kuliner
             </h3>
             <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
-              Peningkatan konversi 140% dengan arsitektur headless modern, visual tajam, dan animasi interaktif halus tanpa beban plugin pihak ketiga.
+              Tata letak visual menggugah selera dengan etalase produk favorit dan tombol order langsung via WhatsApp. Mempermudah pelanggan memesan dalam 1 klik tanpa formulir rumit.
             </p>
+          </div>
+          <div class="pt-2 border-t border-devr-border/50 text-[11px] font-semibold text-devr-text-muted">
+            Hasil: Konversi chat WhatsApp naik hingga 85%
           </div>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+      <!-- Card 2: Company Profile & B2B -->
+      <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
         <div class="relative h-48 overflow-hidden bg-black">
           <img
             src="/assets/devr_creator_studio.jpg"
-            alt="DEVR at Tech Summit"
+            alt="Company Profile & Solusi B2B"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80';"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80';"
           />
+          <div class="absolute bottom-2 left-2 flex gap-1">
+            <span class="bg-black/90 text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-green/40">
+              ENTERPRISE TRUST
+            </span>
+          </div>
         </div>
-        <div class="p-5 flex-1 flex flex-col justify-between">
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
           <div>
-            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
-              Showcase | Korporat
+            <div class="text-[11px] font-bold text-devr-green mb-1 tracking-wider uppercase">
+              Korporat &amp; B2B
             </div>
-            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
-              DEVR at Tech Summit 2026
+            <h3 class="text-lg font-extrabold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors leading-snug">
+              Company Profile &amp; Solusi B2B
             </h3>
             <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
-              Peluncuran landing page interaktif berskala internasional dengan 100k+ pengunjung harian dengan stabilitas server absolut.
+              Desain elegan, berwibawa, dan profesional yang dirancang khusus untuk memenangkan tender pengadaan dan mengamankan kontrak kerja sama bernilai tinggi dari mitra korporat.
             </p>
+          </div>
+          <div class="pt-2 border-t border-devr-border/50 text-[11px] font-semibold text-devr-text-muted">
+            Hasil: Meningkatkan kredibilitas proposal bisnis
           </div>
         </div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+      <!-- Card 3: Promotion Pages -->
+      <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
         <div class="relative h-48 overflow-hidden bg-black">
           <img
             src="/assets/devr_split_comparison.jpg"
-            alt="DEVR Component Engine 4.5"
+            alt="Halaman Promosi Produk & Jasa"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80';"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80';"
           />
+          <div class="absolute bottom-2 left-2 flex gap-1">
+            <span class="bg-black/90 text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-green/40">
+              HIGH CONVERSION
+            </span>
+          </div>
         </div>
-        <div class="p-5 flex-1 flex flex-col justify-between">
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
           <div>
-            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
-              Katalog | Komponen
+            <div class="text-[11px] font-bold text-devr-green mb-1 tracking-wider uppercase">
+              Sales Funnel &amp; Iklan
             </div>
-            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
-              DEVR Component Engine 4.5
+            <h3 class="text-lg font-extrabold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors leading-snug">
+              Halaman Promosi Produk / Jasa
             </h3>
             <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
-              Pembaruan Ray UX Reconstruction kini tersedia, siap mengakselerasi proses pembuatan antarmuka bisnis Anda dalam hitungan hari.
+              Copywriting persuasif dan tata letak terarah psikologi konsumen. Sangat optimal dipadukan dengan iklan berbayar (Meta Ads, Google Ads, TikTok Ads) untuk ROI maksimal.
             </p>
+          </div>
+          <div class="pt-2 border-t border-devr-border/50 text-[11px] font-semibold text-devr-text-muted">
+            Hasil: Rasio konversi iklan meningkat 2x lipat
           </div>
         </div>
       </div>
 
-      <!-- Card 4 -->
-      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+      <!-- Card 4: Professional Services -->
+      <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
         <div class="relative h-48 overflow-hidden bg-black">
           <img
             src="/assets/devr_hero_laptop.jpg"
-            alt="B2B Enterprise Portal"
+            alt="Landing Page Konsultan & Jasa Profesional"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80';"
+            onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80';"
           />
+          <div class="absolute bottom-2 left-2 flex gap-1">
+            <span class="bg-black/90 text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-green/40">
+              LEAD ENGINE
+            </span>
+          </div>
         </div>
-        <div class="p-5 flex-1 flex flex-col justify-between">
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
           <div>
-            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
-              Solusi | B2B Portal
+            <div class="text-[11px] font-bold text-devr-green mb-1 tracking-wider uppercase">
+              Jasa Profesional &amp; Klinik
             </div>
-            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
-              DEVR Enterprise Max-Q
+            <h3 class="text-lg font-extrabold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors leading-snug">
+              Landing Page Konsultan &amp; Jasa
             </h3>
             <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
-              Desain terstruktur yang menyajikan data dan proposisi nilai secara tegas untuk meyakinkan para pengambil keputusan perusahaan.
+              Desain bersih dengan jadwal booking instan, testimoni terverifikasi, dan profil keahlian yang meyakinkan calon klien untuk langsung menjadwalkan konsultasi.
             </p>
+          </div>
+          <div class="pt-2 border-t border-devr-border/50 text-[11px] font-semibold text-devr-text-muted">
+            Hasil: Jadwal booking konsultasi terisi otomatis
           </div>
         </div>
       </div>

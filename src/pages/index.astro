@@ -3,44 +3,48 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import TechSection from '../components/TechSection.astro';
+import HowItWorksSection from '../components/HowItWorksSection.astro';
 import PortfolioSection from '../components/PortfolioSection.astro';
 import ProductivitySection from '../components/ProductivitySection.astro';
 ---
 
 <Layout
-  title="DEVR - Solusi Landing Page Kustom Berkecepatan Tinggi"
-  description="DEVR menghadirkan landing page kustom eksklusif dengan arsitektur Astro.js dan Tailwind CSS. Tanpa batasan template, skor kecepatan maksimal, dan siap melipatgandakan konversi bisnis Anda."
+  title="DEVR Studio - Ubah Pengunjung Jadi Pembeli dengan Landing Page Kustom"
+  description="DEVR Studio menghadirkan landing page kustom berkecepatan tinggi dengan garansi revisi, preview desain UI awal gratis sebelum bayar, dan tanpa biaya langganan hosting bulanan."
 >
-  <!-- Hero Section with RTX Unfolding Showcase & Bottom Tabs -->
+  <!-- Hero Section: Headline Psikologis, Preview UI CTA & Quick Advantages Row -->
   <Hero />
 
-  <!-- Section 1: Teknologi DEVR (Matches 'Teknologi RTX' Carousel) -->
+  <!-- Section 1: Nilai & Solusi (Mengapa Bisnis Anda Butuh DEVR Studio) -->
   <TechSection />
 
-  <!-- Section 2: Portofolio & Solusi Web (Matches 'Game' Section) -->
+  <!-- Section 2: 3 Langkah Mudah Memiliki Website Impian (How It Works) -->
+  <HowItWorksSection />
+
+  <!-- Section 3: Portofolio Solusi Bisnis Riil (UMKM, B2B, Promosi Produk) -->
   <PortfolioSection />
 
-  <!-- Section 3: Berkreasi dan Produktivitas (Matches 'Berkreasi dan Produktivitas') -->
+  <!-- Section 4: Fitur Operasional & Pertumbuhan Bisnis -->
   <ProductivitySection />
 
-  <!-- Action Banner / Conversion CTA (Matches NVIDIA Pro Showcase Banner) -->
-  <section class="py-16 bg-gradient-to-r from-[#000000] via-[#0c120a] to-[#000000] border-t border-b border-devr-border relative overflow-hidden">
+  <!-- Action Banner / Conversion CTA -->
+  <section class="py-16 bg-gradient-to-r from-devr-bg via-devr-card to-devr-bg border-t border-b border-devr-border relative overflow-hidden transition-colors">
     <div class="absolute inset-0 pointer-events-none opacity-20">
       <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-64 bg-devr-green/30 blur-[140px] rounded-full"></div>
     </div>
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-      <span class="inline-block px-3 py-1 rounded bg-devr-badge border border-devr-green/40 text-devr-green font-mono text-xs font-bold uppercase tracking-wider">
-        Mulai Proyek Anda Bersama DEVR
+      <span class="inline-block px-3 py-1 rounded-full bg-devr-badge border border-devr-green/40 text-devr-green font-mono text-xs font-bold uppercase tracking-wider">
+        PENAWARAN AWAL PROYEK
       </span>
 
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-        Dapatkan Landing Page Kustom <br class="hidden sm:inline" />
-        <span class="text-devr-green">Dengan Performa &amp; Konversi Tertinggi</span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-devr-text-primary tracking-tight">
+        SIAP MELIPATGANDAKAN PENJUALAN BISNIS ANDA? <br class="hidden sm:inline" />
+        <span class="text-devr-green">MINTA PREVIEW DESAIN AWAL SEKARANG</span>
       </h2>
 
       <p class="text-sm sm:text-base text-devr-text-secondary max-w-2xl mx-auto leading-relaxed">
-        Tanpa template pasaran. Tanpa langganan hosting bulanan yang mahal. Dibangun dengan standar rekayasa modern untuk hasil bisnis yang nyata.
+        Tanpa beli kucing dalam karung. Kami buatkan konsep visual UI awal khusus bisnis Anda. Suka dengan desainnya? Baru kita lanjutkan ke pengerjaan resmi.
       </p>
 
       <div class="pt-4 flex flex-wrap justify-center gap-4">
@@ -48,15 +52,15 @@ import ProductivitySection from '../components/ProductivitySection.astro';
           href="https://wa.me/"
           target="_blank"
           rel="noopener noreferrer"
-          class="px-8 py-3 text-sm font-bold text-black bg-devr-green hover:bg-devr-green-hover rounded transition-all duration-200 transform hover:scale-105 shadow-lg shadow-devr-green/20"
+          class="px-8 py-3.5 text-sm font-bold text-black bg-devr-green hover:bg-devr-green-hover rounded-lg transition-all duration-200 transform hover:scale-105 shadow-xl shadow-devr-green/20"
         >
-          Konsultasi Gratis Sekarang
+          Konsultasi &amp; Request Desain Gratis via WhatsApp &rarr;
         </a>
         <a
-          href="#teknologi"
-          class="px-8 py-3 text-sm font-semibold text-white border border-devr-border hover:border-devr-green hover:bg-devr-card rounded transition-all duration-200"
+          href="#portofolio"
+          class="px-8 py-3.5 text-sm font-semibold text-devr-text-primary border border-devr-border hover:border-devr-green hover:bg-devr-card rounded-lg transition-all duration-200"
         >
-          Pelajari Spesifikasi Teknis
+          Lihat Portofolio Bisnis
         </a>
       </div>
     </div>

@@ -2,21 +2,26 @@
 // src/components/ProductivitySection.astro
 ---
 
-<section id="produktivitas" class="py-12 bg-devr-bg border-b border-devr-border transition-colors">
+<section id="fitur" class="py-14 bg-devr-bg border-b border-devr-border transition-colors">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Header: Title & Navigation Controls (Matches Screenshot 3) -->
-    <div class="flex items-center justify-between mb-6">
-      <h2 class="text-2xl sm:text-3xl font-extrabold text-devr-text-primary tracking-tight">
-        Berkreasi dan Produktivitas
-      </h2>
+    <!-- Header: Title & Navigation Controls -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+      <div>
+        <span class="text-xs uppercase font-extrabold tracking-widest text-devr-green block mb-1">
+          KEMUDAHAN OPERASIONAL
+        </span>
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-black text-devr-text-primary tracking-tight">
+          FITUR LENGKAP UNTUK PERTUMBUHAN BISNIS
+        </h2>
+      </div>
 
       <!-- Navigation Arrows -->
-      <div class="flex items-center space-x-2">
+      <div class="flex items-center space-x-2 self-end sm:self-auto">
         <button
           type="button"
           id="prod-prev-btn"
-          aria-label="Geser produktivitas ke kiri"
-          class="w-8 h-8 rounded bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95"
+          aria-label="Geser ke kiri"
+          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"/>
@@ -25,8 +30,8 @@
         <button
           type="button"
           id="prod-next-btn"
-          aria-label="Geser produktivitas ke kanan"
-          class="w-8 h-8 rounded bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95"
+          aria-label="Geser ke kanan"
+          class="w-9 h-9 rounded-lg bg-devr-green hover:bg-devr-green-hover text-black flex items-center justify-center font-bold transition-transform active:scale-95 shadow-sm"
         >
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"/>
@@ -41,26 +46,34 @@
       class="flex gap-5 overflow-x-auto no-scrollbar scroll-smooth pb-4 snap-x snap-mandatory"
     >
       <!-- Card 1 -->
-      <div class="flex-none w-[290px] sm:w-[320px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/40 transition-all duration-300 flex flex-col group">
+      <div class="flex-none w-[300px] sm:w-[330px] md:w-[360px] snap-start rounded-xl overflow-hidden bg-devr-card border border-devr-border hover:border-devr-green/60 transition-all duration-300 flex flex-col group shadow-lg">
         <div class="relative h-48 overflow-hidden bg-black">
           <img
             src="/assets/devr_hero_laptop.jpg"
-            alt="DEVR Studio CMS"
+            alt="Kelola Konten Mudah"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80';"
           />
+          <div class="absolute bottom-2 left-2 flex gap-1">
+            <span class="bg-black/90 text-[10px] font-black text-devr-green px-2.5 py-0.5 rounded border border-devr-green/40">
+              MANDIRI &amp; MUDAH
+            </span>
+          </div>
         </div>
-        <div class="p-5 flex-1 flex flex-col justify-between">
+        <div class="p-6 flex-1 flex flex-col justify-between space-y-3">
           <div>
-            <div class="text-[11px] font-bold text-devr-text-muted mb-2 tracking-wide uppercase">
-              Headless CMS | Blog
+            <div class="text-[11px] font-bold text-devr-green mb-1 tracking-wider uppercase">
+              Update Visual
             </div>
-            <h3 class="text-lg font-bold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors">
-              DEVR Studio CMS: Kelola Konten Tanpa Server
+            <h3 class="text-lg font-extrabold text-devr-text-primary mb-2 group-hover:text-devr-green transition-colors leading-snug">
+              Edit Konten &amp; Foto Kapan Saja
             </h3>
             <p class="text-xs text-devr-text-secondary leading-relaxed font-normal">
-              Integrasi Headless CMS gratis (Sanity / Netlify CMS) yang memudahkan tim non-teknis memperbarui teks dan gambar secara instan tanpa menyentuh kode.
+              Dilengkapi panel visual yang ramah pengguna. Anda dan tim dapat mengubah harga promo, testimoni, atau foto produk tanpa perlu bantuan developer.
             </p>
+          </div>
+          <div class="pt-2 border-t border-devr-border/50 text-[11px] font-semibold text-devr-text-muted">
+            ✓ Panduan video &amp; tutorial siap pakai
           </div>
         </div>
       </div>
