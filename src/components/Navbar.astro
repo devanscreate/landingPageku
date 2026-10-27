@@ -30,11 +30,11 @@ import ThemeToggle from './ThemeToggle.astro';
           <a href="#portofolio" class="text-devr-text-secondary hover:text-devr-green transition-colors">
             Portofolio
           </a>
-          <a href="#penawaran" class="text-devr-text-secondary hover:text-devr-green transition-colors">
-            Paket &amp; Penawaran
-          </a>
           <a href="#fitur" class="text-devr-text-secondary hover:text-devr-green transition-colors">
             Fitur Lengkap
+          </a>
+          <a href="#penawaran" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+            Paket &amp; Penawaran
           </a>
         </nav>
       </div>
@@ -90,8 +90,8 @@ import ThemeToggle from './ThemeToggle.astro';
     <a href="#keunggulan" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Keunggulan</a>
     <a href="#cara-kerja" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Cara Kerja</a>
     <a href="#portofolio" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Portofolio</a>
-    <a href="#penawaran" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Paket &amp; Penawaran</a>
     <a href="#fitur" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Fitur Lengkap</a>
+    <a href="#penawaran" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Paket &amp; Penawaran</a>
     <div class="pt-2">
       <a
         href="https://wa.me/"
@@ -108,48 +108,66 @@ import ThemeToggle from './ThemeToggle.astro';
 <script is:inline>
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+  const navLinks = document.querySelectorAll('header nav a[href^="#"], #mobile-menu a[href^="#"]');
+  const sections = document.querySelectorAll('section[id]');
+  const NAV_OFFSET = 64; // Standard sticky navbar height (4rem / h-16)
 
+  // Mobile menu button toggle
   if (mobileBtn && mobileMenu) {
     mobileBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+  }
 
-    mobileMenu.querySelectorAll('a').forEach((link) => {
-      link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-        if (href && href.startsWith('#')) {
-          const target = document.querySelector(href);
-          if (target) {
-            e.preventDefault();
-            mobileMenu.classList.add('hidden');
-            requestAnimationFrame(() => {
-              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              history.pushState(null, '', href);
-            });
-          }
-        }
-      });
+  // Update active state styling on nav items
+  function setActiveNav(activeHref) {
+    navLinks.forEach((link) => {
+      if (link.getAttribute('href') === activeHref) {
+        link.classList.add('text-devr-green', 'font-bold');
+        link.classList.remove('text-devr-text-secondary');
+      } else {
+        link.classList.remove('text-devr-green', 'font-bold');
+        link.classList.add('text-devr-text-secondary');
+      }
     });
   }
 
-  // Active section spy on scroll
-  const navLinks = document.querySelectorAll('header nav a[href^="#"], #mobile-menu a[href^="#"]');
-  const sections = document.querySelectorAll('section[id]');
+  // Standardized smooth scroll function to position target section precisely below navbar
+  function scrollToSection(href) {
+    const target = document.querySelector(href);
+    if (!target) return;
 
+    const targetTop = target.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: 'smooth'
+    });
+
+    history.pushState(null, '', href);
+  }
+
+  // Attach standardized handler to all navbar items (desktop & mobile)
+  navLinks.forEach((link) => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (href && href.startsWith('#')) {
+        e.preventDefault();
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+        setActiveNav(href);
+        scrollToSection(href);
+      }
+    });
+  });
+
+  // Active section spy on scroll
   if ('IntersectionObserver' in window && sections.length > 0) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute('id');
-          navLinks.forEach((link) => {
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('text-devr-green', 'font-bold');
-              link.classList.remove('text-devr-text-secondary');
-            } else {
-              link.classList.remove('text-devr-green', 'font-bold');
-              link.classList.add('text-devr-text-secondary');
-            }
-          });
+          setActiveNav(`#${id}`);
         }
       });
     }, {
