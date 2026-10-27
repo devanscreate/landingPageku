@@ -3,25 +3,44 @@
 import ThemeToggle from './ThemeToggle.astro';
 ---
 
-<header class="w-full sticky top-0 z-50 bg-devr-navbar border-b border-devr-border transition-colors duration-200">
-  <!-- Top Global Bar -->
-  <div class="border-b border-devr-border bg-devr-badge/70 backdrop-blur-sm transition-colors">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-between">
-      <!-- Left: DEVR Brand & Breadcrumb -->
-      <div class="flex items-center space-x-2">
-        <a href="/" class="flex items-center gap-1.5 group" aria-label="DEVR Homepage">
+<header class="w-full sticky top-0 z-50 bg-devr-navbar/95 backdrop-blur-md border-b border-devr-border transition-colors duration-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Left: DEVR Studio Branding -->
+      <div class="flex items-center space-x-8">
+        <a href="/" class="flex items-center gap-2 group" aria-label="DEVR Studio Homepage">
           <!-- Emblem SVG -->
           <svg class="w-6 h-5 text-devr-green transition-transform group-hover:scale-105" viewBox="0 0 32 24" fill="currentColor">
             <path d="M0 4.5C0 2.015 2.015 0 4.5 0h8.25c6.213 0 11.25 5.037 11.25 11.25v1.5C24 18.963 18.963 24 12.75 24H4.5A4.5 4.5 0 010 19.5v-15zm4.5 3.75v7.5h8.25c2.071 0 3.75-1.679 3.75-3.75s-1.679-3.75-3.75-3.75H4.5z"/>
             <path d="M26.5 6a3.5 3.5 0 013.5 3.5v5a3.5 3.5 0 01-7 0v-5a3.5 3.5 0 013.5-3.5z" opacity="0.9"/>
           </svg>
-          <span class="text-devr-text-primary font-extrabold text-base tracking-wider">DEVR</span>
+          <span class="text-devr-text-primary font-bold text-lg tracking-tight hover:text-devr-green transition-colors">
+            DEVR <span class="text-devr-green">Studio</span>
+          </span>
         </a>
-        <span class="text-devr-text-muted text-xs font-semibold select-none">&gt;</span>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden lg:flex items-center space-x-6 text-[13px] font-medium" aria-label="Navigasi Utama">
+          <a href="#keunggulan" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+            Keunggulan
+          </a>
+          <a href="#cara-kerja" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+            Cara Kerja
+          </a>
+          <a href="#portofolio" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+            Portofolio
+          </a>
+          <a href="#penawaran" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+            Paket &amp; Penawaran
+          </a>
+          <a href="#fitur" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+            Fitur Lengkap
+          </a>
+        </nav>
       </div>
 
-      <!-- Right: Language Selector & Theme Toggle -->
-      <div class="flex items-center space-x-4">
+      <!-- Right: Language Selector, Theme Toggle, CTA & Mobile Menu Toggle -->
+      <div class="flex items-center space-x-2 sm:space-x-3">
         <!-- Language selector -->
         <button
           type="button"
@@ -38,60 +57,23 @@ import ThemeToggle from './ThemeToggle.astro';
 
         <!-- Dynamic Theme Toggle -->
         <ThemeToggle />
-      </div>
-    </div>
-  </div>
 
-  <!-- Sub-Navbar: Main Navigation -->
-  <div class="bg-devr-navbar transition-colors">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-14">
-        <!-- Left: DEVR Studio Branding & Navigation Links -->
-        <div class="flex items-center space-x-8">
-          <a href="/" class="flex items-center gap-1.5">
-            <span class="text-devr-text-primary font-bold text-lg tracking-tight hover:text-devr-green transition-colors">
-              DEVR <span class="text-devr-green">Studio</span>
-            </span>
-          </a>
+        <!-- CTA Button (Visible on screens >= sm) -->
+        <a
+          href="https://wa.me/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="hidden sm:inline-flex items-center px-3.5 py-1.5 text-xs font-bold text-devr-green-text bg-devr-green hover:bg-devr-green-hover rounded-lg transition-all duration-200 transform hover:-translate-y-0.5 shadow-sm whitespace-nowrap"
+        >
+          Minta Desain Awal
+        </a>
 
-          <!-- Desktop Navigation -->
-          <nav class="hidden md:flex items-center space-x-6 text-[13px] font-medium" aria-label="Navigasi Utama">
-            <a href="#keunggulan" class="text-devr-text-secondary hover:text-devr-green transition-colors">
-              Keunggulan
-            </a>
-            <a href="#cara-kerja" class="text-devr-text-secondary hover:text-devr-green transition-colors">
-              Cara Kerja
-            </a>
-            <a href="#portofolio" class="text-devr-text-secondary hover:text-devr-green transition-colors">
-              Portofolio
-            </a>
-            <a href="#penawaran" class="text-devr-text-secondary hover:text-devr-green transition-colors">
-              Paket &amp; Penawaran
-            </a>
-            <a href="#fitur" class="text-devr-text-secondary hover:text-devr-green transition-colors">
-              Fitur Lengkap
-            </a>
-          </nav>
-        </div>
-
-        <!-- Right: CTA Button -->
-        <div class="hidden md:flex items-center">
-          <a
-            href="https://wa.me/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="px-4 py-2 text-xs font-bold text-devr-green-text bg-devr-green hover:bg-devr-green-hover rounded transition-all duration-200 transform hover:-translate-y-0.5 shadow-sm"
-          >
-            Minta Desain Awal Gratis
-          </a>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <div class="flex md:hidden items-center">
+        <!-- Mobile Menu Button (Visible on screens < lg) -->
+        <div class="flex lg:hidden items-center">
           <button
             id="mobile-menu-btn"
             type="button"
-            class="p-2 text-devr-text-secondary hover:text-devr-text-primary focus:outline-none"
+            class="p-1.5 sm:p-2 text-devr-text-secondary hover:text-devr-text-primary focus:outline-none rounded hover:bg-devr-card transition-colors"
             aria-label="Toggle Menu"
           >
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -101,24 +83,24 @@ import ThemeToggle from './ThemeToggle.astro';
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden border-t border-devr-border bg-devr-card px-4 pt-2 pb-4 space-y-2">
-      <a href="#keunggulan" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Keunggulan</a>
-      <a href="#cara-kerja" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Cara Kerja</a>
-      <a href="#portofolio" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Portofolio</a>
-      <a href="#penawaran" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Paket &amp; Penawaran</a>
-      <a href="#fitur" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Fitur Lengkap</a>
-      <div class="pt-2">
-        <a
-          href="https://wa.me/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block w-full text-center py-2.5 text-xs font-bold text-devr-green-text bg-devr-green hover:bg-devr-green-hover rounded shadow-sm"
-        >
-          Minta Desain Awal Gratis
-        </a>
-      </div>
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-devr-border bg-devr-card px-4 pt-2 pb-4 space-y-2">
+    <a href="#keunggulan" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Keunggulan</a>
+    <a href="#cara-kerja" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Cara Kerja</a>
+    <a href="#portofolio" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Portofolio</a>
+    <a href="#penawaran" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Paket &amp; Penawaran</a>
+    <a href="#fitur" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Fitur Lengkap</a>
+    <div class="pt-2">
+      <a
+        href="https://wa.me/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full text-center py-2.5 text-xs font-bold text-devr-green-text bg-devr-green hover:bg-devr-green-hover rounded-lg shadow-sm"
+      >
+        Minta Desain Awal Gratis
+      </a>
     </div>
   </div>
 </header>
@@ -126,9 +108,55 @@ import ThemeToggle from './ThemeToggle.astro';
 <script is:inline>
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
+
   if (mobileBtn && mobileMenu) {
     mobileBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            mobileMenu.classList.add('hidden');
+            requestAnimationFrame(() => {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              history.pushState(null, '', href);
+            });
+          }
+        }
+      });
+    });
+  }
+
+  // Active section spy on scroll
+  const navLinks = document.querySelectorAll('header nav a[href^="#"], #mobile-menu a[href^="#"]');
+  const sections = document.querySelectorAll('section[id]');
+
+  if ('IntersectionObserver' in window && sections.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navLinks.forEach((link) => {
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('text-devr-green', 'font-bold');
+              link.classList.remove('text-devr-text-secondary');
+            } else {
+              link.classList.remove('text-devr-green', 'font-bold');
+              link.classList.add('text-devr-text-secondary');
+            }
+          });
+        }
+      });
+    }, {
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    });
+
+    sections.forEach((sec) => observer.observe(sec));
   }
 </script>
