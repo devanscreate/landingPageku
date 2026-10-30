@@ -21,19 +21,19 @@ import ThemeToggle from './ThemeToggle.astro';
 
         <!-- Desktop Navigation -->
         <nav class="hidden lg:flex items-center space-x-6 text-[13px] font-medium" aria-label="Navigasi Utama">
-          <a href="#keunggulan" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+          <a href="/keunggulan" class="text-devr-text-secondary hover:text-devr-green transition-colors">
             Keunggulan
           </a>
-          <a href="#cara-kerja" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+          <a href="/cara-kerja" class="text-devr-text-secondary hover:text-devr-green transition-colors">
             Cara Kerja
           </a>
-          <a href="#portofolio" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+          <a href="/portofolio" class="text-devr-text-secondary hover:text-devr-green transition-colors">
             Portofolio
           </a>
-          <a href="#fitur" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+          <a href="/fitur" class="text-devr-text-secondary hover:text-devr-green transition-colors">
             Fitur Lengkap
           </a>
-          <a href="#penawaran" class="text-devr-text-secondary hover:text-devr-green transition-colors">
+          <a href="/penawaran" class="text-devr-text-secondary hover:text-devr-green transition-colors">
             Paket &amp; Penawaran
           </a>
         </nav>
@@ -87,11 +87,11 @@ import ThemeToggle from './ThemeToggle.astro';
 
   <!-- Mobile Navigation Drawer -->
   <div id="mobile-menu" class="hidden lg:hidden border-t border-devr-border bg-devr-card px-4 pt-2 pb-4 space-y-2">
-    <a href="#keunggulan" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Keunggulan</a>
-    <a href="#cara-kerja" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Cara Kerja</a>
-    <a href="#portofolio" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Portofolio</a>
-    <a href="#fitur" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Fitur Lengkap</a>
-    <a href="#penawaran" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Paket &amp; Penawaran</a>
+    <a href="/keunggulan" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Keunggulan</a>
+    <a href="/cara-kerja" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Cara Kerja</a>
+    <a href="/portofolio" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Portofolio</a>
+    <a href="/fitur" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Fitur Lengkap</a>
+    <a href="/penawaran" class="block py-2 text-sm text-devr-text-secondary hover:text-devr-green">Paket &amp; Penawaran</a>
     <div class="pt-2">
       <a
         href="https://wa.me/"
@@ -108,9 +108,10 @@ import ThemeToggle from './ThemeToggle.astro';
 <script is:inline>
   const mobileBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  const navLinks = document.querySelectorAll('header nav a[href^="#"], #mobile-menu a[href^="#"]');
-  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('header nav a[href^="/"], #mobile-menu a[href^="/"]');
+  const sections = document.querySelectorAll('section[id], footer[id]');
   const NAV_OFFSET = 64; // Standard sticky navbar height (4rem / h-16)
+  const VALID_SECTIONS = new Set(['hero', 'keunggulan', 'cara-kerja', 'portofolio', 'fitur', 'penawaran', 'kontak']);
 
   // Mobile menu button toggle
   if (mobileBtn && mobileMenu) {
@@ -119,10 +120,19 @@ import ThemeToggle from './ThemeToggle.astro';
     });
   }
 
+  // Extract section ID from href or path (e.g., '/cara-kerja' or '#cara-kerja' -> 'cara-kerja')
+  function getSectionIdFromHref(href) {
+    if (!href) return null;
+    if (href === '/' || href === '#hero' || href === '/hero') return 'hero';
+    const clean = href.replace(/^[/#]+/, '').replace(/\/+$/, '');
+    return VALID_SECTIONS.has(clean) ? clean : null;
+  }
+
   // Update active state styling on nav items
-  function setActiveNav(activeHref) {
+  function setActiveNav(sectionId) {
+    const activePath = sectionId && sectionId !== 'hero' ? `/${sectionId}` : '';
     navLinks.forEach((link) => {
-      if (link.getAttribute('href') === activeHref) {
+      if (link.getAttribute('href') === activePath) {
         link.classList.add('text-devr-green', 'font-bold');
         link.classList.remove('text-devr-text-secondary');
       } else {
@@ -132,33 +142,71 @@ import ThemeToggle from './ThemeToggle.astro';
     });
   }
 
-  // Standardized smooth scroll function to position target section precisely below navbar
-  function scrollToSection(href) {
-    const target = document.querySelector(href);
+  // Smooth scroll to target section and update URL with clean path (no #)
+  function scrollToSection(sectionId, updateHistory = true, smooth = true) {
+    const target = document.getElementById(sectionId);
     if (!target) return;
 
-    const targetTop = target.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
+    const targetTop = sectionId === 'hero'
+      ? 0
+      : target.getBoundingClientRect().top + window.pageYOffset - NAV_OFFSET;
+
     window.scrollTo({
       top: Math.max(0, targetTop),
-      behavior: 'smooth'
+      behavior: smooth ? 'smooth' : 'auto'
     });
 
-    history.pushState(null, '', href);
+    if (updateHistory) {
+      const cleanUrl = sectionId === 'hero' ? '/' : `/${sectionId}`;
+      if (window.location.pathname !== cleanUrl || window.location.hash) {
+        history.pushState({ sectionId }, '', cleanUrl);
+      }
+    }
   }
 
-  // Attach standardized handler to all navbar items (desktop & mobile)
-  navLinks.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
-          mobileMenu.classList.add('hidden');
-        }
-        setActiveNav(href);
-        scrollToSection(href);
+  // Intercept all internal section links across the page (Navbar, Hero, Footer, CTA)
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (href === '#') {
+      e.preventDefault();
+      return;
+    }
+
+    const sectionId = getSectionIdFromHref(href);
+    if (sectionId) {
+      e.preventDefault();
+      if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
       }
-    });
+      setActiveNav(sectionId);
+      scrollToSection(sectionId, true, true);
+    }
+  });
+
+  // Handle direct URL visit (e.g. /cara-kerja) or legacy hash URL (e.g. /#cara-kerja) on load
+  window.addEventListener('DOMContentLoaded', () => {
+    const hashSection = getSectionIdFromHref(window.location.hash);
+    const pathSection = getSectionIdFromHref(window.location.pathname);
+    const initialSection = hashSection || (pathSection !== 'hero' ? pathSection : null);
+
+    if (initialSection) {
+      const cleanUrl = initialSection === 'hero' ? '/' : `/${initialSection}`;
+      history.replaceState({ sectionId: initialSection }, '', cleanUrl);
+      setActiveNav(initialSection);
+      requestAnimationFrame(() => {
+        scrollToSection(initialSection, false, false);
+      });
+    }
+  });
+
+  // Handle browser Back / Forward buttons
+  window.addEventListener('popstate', () => {
+    const sectionId = getSectionIdFromHref(window.location.pathname) || 'hero';
+    setActiveNav(sectionId);
+    scrollToSection(sectionId, false, true);
   });
 
   // Active section spy on scroll
@@ -167,7 +215,7 @@ import ThemeToggle from './ThemeToggle.astro';
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const id = entry.target.getAttribute('id');
-          setActiveNav(`#${id}`);
+          setActiveNav(id);
         }
       });
     }, {
